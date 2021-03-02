@@ -1,0 +1,14 @@
+{
+    "name": "hexlet/code",
+    "authors": [
+        {
+            "name": "Vladislav",
+            "email": "qedirast@gmail.com"
+        }
+    ],
+    "description": "ttt",
+    "bin": [
+        "bin/brain-games"
+      ],
+    "require": {}
+}
