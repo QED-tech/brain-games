@@ -1,4 +1,9 @@
 #!/usr/bin/php php
 
 <?php
-echo "Welcome to the Brain Games!\n";
+include __DIR__ . '/../vendor/autoload.php';
+
+use Brain\Games\Cli\Cli;
+
+$cli = new Cli;
+$cli->start();

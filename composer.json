@@ -6,9 +6,24 @@
             "email": "qedirast@gmail.com"
         }
     ],
-    "description": "ttt",
+    "description": "Brains games project",
+    "license": "MIT",
     "bin": [
         "bin/brain-games"
-      ],
-    "require": {}
+    ],
+    "autoload": {
+        "psr-4": {
+            "Brain\\": "src/"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs -- --standard=PSR2 src bin"
+    },
+    "require": {
+        "php": ">=7.4",
+        "wp-cli/php-cli-tools": "^0.11.11"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    }
 }
