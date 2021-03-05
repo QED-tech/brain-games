@@ -1,9 +1,11 @@
 #!/usr/bin/php
 
 <?php
+
+use Brain\Games\Even;
+
 include __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\Cli;
 
-$cli = new Cli;
-$cli->greetingUser();
+$game = new Even();
+$game->process();

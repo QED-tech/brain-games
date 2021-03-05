@@ -1,16 +1,25 @@
 <?php
 
-namespace Brain\Games\Cli;
+namespace Brain\Games;
 
 use function cli\line;
 use function cli\prompt;
 
 class Cli
 {
-    public function start(): void
+
+    private string $name;
+
+    public function greetingUser(): void
     {
         line('Welcome to the Brain Game!');
-        $name = prompt('May I have your name?');
-        line("Hello, %s!", $name);
+        $this->name = prompt('May I have your name?');
+        line("Hello, %s!", $this->name);
+    }
+
+
+    public function getName()
+    {
+        return $this->name;
     }
 }
