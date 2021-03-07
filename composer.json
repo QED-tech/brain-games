@@ -10,7 +10,8 @@
     "license": "MIT",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "brain-calc"
     ],
     "autoload": {
         "psr-4": {

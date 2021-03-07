@@ -36,18 +36,6 @@ abstract class Engine
         $this->answer = prompt('Your answer');
     }
 
-    protected function answerToBoolean(): bool
-    {
-        switch (mb_strtolower($this->answer)) {
-            case 'yes':
-                return true;
-            case 'no':
-                return false;
-            default:
-                return false;
-        }
-    }
-
     protected function writeRules(string $rules): void
     {
         line($rules);
@@ -90,5 +78,5 @@ abstract class Engine
     abstract protected function setExpression(): void;
     abstract protected function getExpression();
     abstract protected function validateAnswer(): bool;
-    abstract protected function getCorrectAnswer();
+    abstract protected function getCorrectAnswer(): string;
 }

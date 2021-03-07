@@ -1,0 +1,12 @@
+#!/usr/bin/php
+
+
+<?php
+
+use Brain\Games\Calc;
+
+include __DIR__ . '/../vendor/autoload.php';
+
+
+$game = new Calc();
+$game->process();
