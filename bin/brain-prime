@@ -1,0 +1,10 @@
+#!/usr/bin/php
+
+<?php
+include __DIR__ . '/../vendor/autoload.php';
+
+use Brain\Games\Prime;
+
+
+$game = new Prime();
+$game->process();

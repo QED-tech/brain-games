@@ -39,9 +39,4 @@ class Even extends Engine
     {
         return $this->expression % 2 === 0;
     }
-
-    private function answerToBoolean(): bool
-    {
-        return mb_strtolower($this->answer) === 'yes';
-    }
 }

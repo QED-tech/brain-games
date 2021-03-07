@@ -34,6 +34,11 @@ abstract class Engine
         $this->checkWin();
     }
 
+    protected function answerToBoolean(): bool
+    {
+        return mb_strtolower($this->answer) === 'yes';
+    }
+
     protected function sleep()
     {
         sleep(self::SLEEP_TIME);
