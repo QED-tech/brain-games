@@ -14,11 +14,24 @@ abstract class Engine
     protected const SLEEP_TIME = 1;
     protected const MAX_RETRY = 3;
     protected string $answer;
+    protected string $rules;
 
-    protected function __construct()
+
+    protected function __construct(string $rules)
     {
         $this->correctCount = 0;
         $this->cli = new Cli();
+        $this->rules = $rules;
+    }
+
+
+    public function process(): void
+    {
+        $this->cli->greetingUser();
+        $this->sleep();
+        $this->writeRules($this->rules);
+        $this->retryGame();
+        $this->checkWin();
     }
 
     protected function sleep()
@@ -26,7 +39,7 @@ abstract class Engine
         sleep(self::SLEEP_TIME);
     }
 
-    protected function congratulateUser($userName): void
+    protected function congratulateUser(string $userName): void
     {
         line("Congratulations, %s!", $userName);
     }
@@ -74,7 +87,6 @@ abstract class Engine
         }
     }
 
-    abstract public function process(): void;
     abstract protected function setExpression(): void;
     abstract protected function getExpression();
     abstract protected function validateAnswer(): bool;

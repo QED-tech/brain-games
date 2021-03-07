@@ -10,16 +10,7 @@ class Even extends Engine
 
     public function __construct()
     {
-        parent::__construct();
-    }
-
-    public function process(): void
-    {
-        $this->cli->greetingUser();
-        $this->sleep();
-        $this->writeRules('Answer "yes" if the number is even, otherwise answer "no".');
-        $this->retryGame();
-        $this->checkWin();
+        parent::__construct('Answer "yes" if the number is even, otherwise answer "no".');
     }
 
     protected function getCorrectAnswer(): string
@@ -32,10 +23,6 @@ class Even extends Engine
         return $this->answerToBoolean() === $this->isEven();
     }
 
-    private function isEven(): bool
-    {
-        return $this->expression % 2 === 0;
-    }
 
     protected function setExpression(): void
     {
@@ -45,6 +32,12 @@ class Even extends Engine
     protected function getExpression(): int
     {
         return $this->expression;
+    }
+
+
+    private function isEven(): bool
+    {
+        return $this->expression % 2 === 0;
     }
 
     private function answerToBoolean(): bool

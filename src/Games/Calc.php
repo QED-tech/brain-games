@@ -21,16 +21,7 @@ class Calc extends Engine
 
     public function __construct()
     {
-        parent::__construct();
-    }
-
-    public function process(): void
-    {
-        $this->cli->greetingUser();
-        $this->sleep();
-        $this->writeRules('What is the result of the expression?');
-        $this->retryGame();
-        $this->checkWin();
+        parent::__construct('What is the result of the expression?');
     }
 
     protected function getExpression(): string
@@ -48,11 +39,6 @@ class Calc extends Engine
         $this->expression = "{$leftOperand} {$mathSymbol} {$rightOperand}";
     }
 
-    private function setRandomIndex(): void
-    {
-        $this->randomIndex = mt_rand(1, 3);
-    }
-
     protected function validateAnswer(): bool
     {
         return (int) $this->answer === (int) $this->correctAnswer;
@@ -61,6 +47,12 @@ class Calc extends Engine
     protected function getCorrectAnswer(): string
     {
         return (string) $this->correctAnswer;
+    }
+
+
+    private function setRandomIndex(): void
+    {
+        $this->randomIndex = mt_rand(1, 3);
     }
 
     private function setCorrectAnswer(int $leftOperand, int $rightOperand): void
