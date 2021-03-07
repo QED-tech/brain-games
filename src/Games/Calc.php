@@ -33,10 +33,10 @@ class Calc extends Engine
     {
         $this->setRandomIndex();
         $mathSymbol = $this->mathSymbols[$this->randomIndex];
-        $leftOperand = mt_rand(1, 12);
-        $rightOperand = mt_rand(1, 12);
-        $this->setCorrectAnswer($leftOperand, $rightOperand);
-        $this->expression = "{$leftOperand} {$mathSymbol} {$rightOperand}";
+        $a = mt_rand(1, 12);
+        $b = mt_rand(1, 12);
+        $this->setCorrectAnswer($a, $b);
+        $this->expression = "{$a} {$mathSymbol} {$b}";
     }
 
     protected function validateAnswer(): bool
@@ -55,17 +55,17 @@ class Calc extends Engine
         $this->randomIndex = mt_rand(1, 3);
     }
 
-    private function setCorrectAnswer(int $leftOperand, int $rightOperand): void
+    private function setCorrectAnswer(int $a, int $b): void
     {
         switch ($this->randomIndex) {
             case self::MINUS_INDEX:
-                $this->correctAnswer = $leftOperand - $rightOperand;
+                $this->correctAnswer = $a - $b;
                 break;
             case self::PLUS_INDEX:
-                $this->correctAnswer = $leftOperand + $rightOperand;
+                $this->correctAnswer = $a + $b;
                 break;
             case self::MULTIPLY_INDEX:
-                $this->correctAnswer = $leftOperand * $rightOperand;
+                $this->correctAnswer = $a * $b;
                 break;
         }
     }
