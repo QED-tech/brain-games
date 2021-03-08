@@ -24,4 +24,4 @@ Use ```make brain-progression``` command to start
 ##  Prime Game
 Answer "yes" if given number is prime. Otherwise answer "no".  
 Use ```make brain-prime``` command to start  
-[![asciicast](https://asciinema.org/a/299663.svg)](https://asciinema.org/a/299663)
+[![asciicast](https://asciinema.org/a/397501.svg)](https://asciinema.org/a/397501)
